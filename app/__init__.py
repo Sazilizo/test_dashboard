@@ -17,7 +17,7 @@ def create_app():
     migrate.init_app(app, db)
     limiter.init_app(app)
     
-    CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+    CORS(app, supports_credentials=True, origins=["http://localhost:3000", "https://test-dashboard-app-tunnel-8g8atwh8.devinapps.com"])
     
     register_routes(app)
     
