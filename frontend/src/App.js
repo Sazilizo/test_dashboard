@@ -34,9 +34,9 @@ function App() {
     }
   };
 
-  const handleLogin = async (email, password) => {
+  const handleLogin = async (username, password) => {
     try {
-      const response = await axios.post('/auth/login', { email, password });
+      const response = await axios.post('/auth/login', { username, password });
       const { access_token, user: userData } = response.data;
       
       localStorage.setItem('token', access_token);
@@ -124,7 +124,7 @@ function AuthenticatedApp({ user, onLogout }) {
 }
 
 function LoginPage({ onLogin }) {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -134,7 +134,7 @@ function LoginPage({ onLogin }) {
     setLoading(true);
     setError('');
 
-    const result = await onLogin(email, password);
+    const result = await onLogin(username, password);
     
     if (!result.success) {
       setError(result.error);
@@ -150,11 +150,11 @@ function LoginPage({ onLogin }) {
         {error && <div className="error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Email:</label>
+            <label>Username:</label>
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
               disabled={loading}
             />
