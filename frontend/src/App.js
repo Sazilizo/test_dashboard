@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-ro
 import axios from 'axios';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://user:634d325c6160a89428b42f77ea426915@test-dashboard-app-tunnel-3lu4cxww.devinapps.com/api';
 
 axios.defaults.baseURL = API_BASE_URL;
 
