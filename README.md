@@ -2,6 +2,12 @@
 
 A simple test dashboard project for demonstrating Devin's capabilities.
 
+## Features
+
+- Simple dashboard display with system metrics
+- Clean Python code with proper linting
+- Easy to extend and customize
+
 ## Setup
 
 This is a basic Python project with linting configured.
